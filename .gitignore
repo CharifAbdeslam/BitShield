@@ -8,8 +8,10 @@
 
 # production
 /build
-#css file 
+
+#css file
 src/**/*.css
+
 # misc
 .DS_Store
 .env.local

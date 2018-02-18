@@ -1,8 +1,11 @@
 
-  #A quick start project for React that include Bootstrap v4 https://reactstrap.github.io/ and Sass
+# react-boilerplate-light
 
-  -1 Clone the repo : git clone https://github.com/CharifAbdeslam/React-Simple-Starter.git
-  -2 Run : npm install
-  -3 to start in the dev mode simply run : npm start , to build the project npm run build
+ :boom: Start your next react project in one second with  [**Bootstrap v4**!](https://reactstrap.github.io/) and **Sass** :boom:
 
-  Enjoy :)
+* Clone this repo.
+* Run : `npm install`
+* To start in the dev mode simply run : `npm start`
+* For the production build: `npm run build`
+
+# Enjoy :)
