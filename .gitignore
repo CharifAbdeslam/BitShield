@@ -10,7 +10,7 @@
 /build
 
 #css file
-/src/**/*.css
+/src/*.css
 
 # misc
 .DS_Store
