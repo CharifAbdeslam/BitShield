@@ -9,7 +9,7 @@ import NoMatch from './NoMatch';
 import Footer from './Footer';
 import Support from './Support';
 class App extends Component {
-  
+
   render() {
     return (<Router>
       <div>
@@ -18,15 +18,14 @@ class App extends Component {
           <Route exact={true} path="/" component={Home}/>
           <Route exact={true} path="/login" component={Login}/>
           <Route exact={true} path="/signup" component={Signup}/>
-          <Route exact={true} name="exchange" path="/exchange" component={Exchange} />
+          <Route exact={true} name="exchange" path="/exchange" component={Exchange}/>
           <Route exact={true} path="/support" component={Support}/>
           <Route component={NoMatch}/>
         </Switch>
-<Footer/>
+        <Footer/>
       </div>
 
-    </Router>
-  );
+    </Router>);
   }
 }
 export default App;

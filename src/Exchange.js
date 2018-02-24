@@ -7,7 +7,6 @@ export default class Exchange extends Component{
       }else{
         nv.style.display = "block";
       }
-
   }
   render(){
     return(
