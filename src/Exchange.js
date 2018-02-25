@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
+import {_chekNav} from "./func.js";
 export default class Exchange extends Component{
   componentDidMount(){
-    var nv = document.getElementById("nvL");
-      if(window.location.pathname === "/exchange"){
-        nv.style.display = "none";
-      }else{
-        nv.style.display = "block";
-      }
+  _chekNav();
   }
   render(){
     return(

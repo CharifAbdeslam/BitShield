@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
+import {_chekNav} from "./func.js";
 export default class Support extends Component {
   componentDidMount() {
-    var nv = document.getElementById("nvL");
-    nv.style.display = "block";
+  _chekNav();
   }
   render() {
     return (<div className="container">

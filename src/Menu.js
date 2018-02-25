@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import logo from './img/logo.png';
-import {Button, Navbar, NavItem,Nav} from 'reactstrap';
+import {Button, Navbar, NavItem,Nav,UncontrolledDropdown,DropdownToggle,DropdownMenu,DropdownItem} from 'reactstrap';
 import {Link} from "react-router-dom";
 export default class Menu extends Component {
   loginBtn() {
@@ -16,6 +16,22 @@ export default class Menu extends Component {
         <div className="container">
      <Link to="/">  <img src={logo} height="50" alt="Unable to load the logo"></img></Link>
         <Nav  className="ml-auto" navbar>
+          <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret className="mr-2">
+                  MORE
+                </DropdownToggle>
+                <DropdownMenu >
+                <Link to="/">  <DropdownItem>
+                    HOME
+                  </DropdownItem>
+                </Link>
+                <Link to="/support">
+                  <DropdownItem>
+                  SUPPORT
+                  </DropdownItem>
+</Link>
+                </DropdownMenu>
+              </UncontrolledDropdown>
           <Link to="/exchange">
           <NavItem className="nvLink">
       <p className="exChange mr-3 pr-3 mb-0">EXCHANGE</p>

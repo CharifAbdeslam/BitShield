@@ -2,13 +2,17 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import {Button}  from 'reactstrap';
 import ExchangeAnimation from "./img/home.png";
+import {_chekNav} from "./func.js";
 export default class Home extends Component{
+  componentDidMount(){
+  _chekNav();
+  }
   render(){
     return(
       <div>
       <div className="container homeContainer">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-4">
           <h1 className="text-white">
           <i className="fas fa-globe fa-2x text-warning "></i> A World class<br></br> exchange platform
           </h1>
@@ -16,8 +20,8 @@ export default class Home extends Component{
           <Link to="/signup"> <Button  className="text-white mr-4" outline color="warning">SIGN UP</Button></Link>
            <Link to="/exchange"><Button className="text-white" color="warning">VIEW EXCHANGE</Button></Link>
         </div>
-        <div className="col-md-6">
-          <img src={ExchangeAnimation} alt="Unable to load the exchange..."/>
+        <div className="col-md-8">
+          <img src={ExchangeAnimation} className="img-fluid" alt="Unable to load the exchange..."/>
         </div>
         </div>
       </div>

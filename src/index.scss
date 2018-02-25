@@ -9,22 +9,30 @@ body {
   font-family: sans-serif;
   background-color: $gray-900;
 
-  a:hover {
-    text-decoration: none;
-  }
+  a {
+    text-decoration: none !important;
+    color: $gray-600;
 
+    &:hover {
+      color: $gray-900;
+    }
+  }
   .nvBar {
     background-color: $gray-100;
-     .nvLink{
-       line-height: 40px;
-     }
+    box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+    .dropdown-item{
+       color: $gray-600;
+      &:active{
+        background-color: #cbcbcb;
+      }
+    }
+
+    .nvLink {
+      line-height: 40px;
+    }
+
     .exChange {
       border-right: solid 1px $gray-900;
-      color: $gray-600;
-
-      &:hover {
-        color: $gray-900;
-      }
     }
   }
 

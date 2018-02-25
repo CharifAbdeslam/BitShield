@@ -18,7 +18,7 @@ class App extends Component {
           <Route exact={true} path="/" component={Home}/>
           <Route exact={true} path="/login" component={Login}/>
           <Route exact={true} path="/signup" component={Signup}/>
-          <Route exact={true} name="exchange" path="/exchange" component={Exchange}/>
+          <Route exact={true} name="exchange" path="/exchange" component={(props)=><Exchange {...props}/>}/>
           <Route exact={true} path="/support" component={Support}/>
           <Route component={NoMatch}/>
         </Switch>
