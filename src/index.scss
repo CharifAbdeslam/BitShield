@@ -1,13 +1,71 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 $backG: #212121;
 $eleM: #e9e9e9;
-$btN: #d84315;
-
+$btN: #2daaa7!important;
+$btNhover:#4ac9c6!important;
 body {
+  .exchange-container{
+    height: 100vh;
+    background-color: $backG;
+    .navbar-demo{
+      padding: 1px;
+      border-bottom: solid 1px black;
+      .spinner_demo{
+        line-height: 34px;
+      }
+
+      .trading-menu{
+
+        .dropdown-menu{
+          background-color: $gray-700;
+         ul{
+           max-width: 100px;
+         }
+        button{
+          color:$btN;
+          font-size: 0.8rem;
+          cursor: pointer;
+          &:hover,  &:focus{
+              background-color: $gray-900;
+          }
+
+        }
+        }
+        a{
+          color:$btNhover;
+        }
+
+      }
+    }
+  }
+.text-primary{
+  color: $btN;
+}
+.btn-primary{
+  background-color: $btN;
+border-color: $btN;
+&:hover,&:focus{
+  background-color:#4ac9c6;
+  border-color: $btN;
+    box-shadow: 0 0 0 0.2rem $btN;
+}
+}
+.btn-outline-primary{
+  border-color: $btN;
+  &:hover,&:focus{
+    background-color:$btN;
+      box-shadow: 0 0 0 0.2rem $btN;
+  }
+}
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: $gray-900;
+  height: 100vh;
+
+  background: #474747;
+  background: -moz-linear-gradient(45deg, #474747 0%, #262626 66%);
+  background: -webkit-linear-gradient(45deg, #474747 0%,#262626 66%);
+  background: linear-gradient(45deg, #474747 0%,#262626 66%);
 
   a {
     text-decoration: none !important;
@@ -18,10 +76,15 @@ body {
     }
   }
   .nvBar {
-    background-color: $gray-100;
-    box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+background: #eaf3f9;
+background: -moz-linear-gradient(top, #eaf3f9 0%, #b9bcbf 100%);
+background: -webkit-linear-gradient(top, #eaf3f9 0%,#b9bcbf 100%);
+background: linear-gradient(to bottom, #eaf3f9 0%,#b9bcbf 100%);
+
     .dropdown-item{
-       color: $gray-600;
+       color: $gray-800;
       &:active{
         background-color: #cbcbcb;
       }
@@ -38,7 +101,6 @@ body {
 
   .homeContainer {
     margin-top: 7%;
-
     .txHome {
       opacity: 0.8;
     }
@@ -46,11 +108,14 @@ body {
 
   .exchangeStatus {
     width: 100%;
-    background-color: $gray-100;
     height: 25px;
+    background: #eaf3f9;
+    background: -moz-linear-gradient(top, #eaf3f9 0%, #b9bcbf 100%);
+    background: -webkit-linear-gradient(top, #eaf3f9 0%,#b9bcbf 100%);
+    background: linear-gradient(to bottom, #eaf3f9 0%,#b9bcbf 100%);
 
     span {
-      color: $gray-600;
+      color: $gray-800;
       font-size: 0.8rem;
     }
 
