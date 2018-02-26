@@ -4,7 +4,7 @@ import Menu from './Menu';
 import Home from './Home';
 import Signup from './Signup';
 import Login from './Login';
-import Exchange from './Exchange';
+import Exchange from './trading/Exchange';
 import NoMatch from './NoMatch';
 import Footer from './Footer';
 import Support from './Support';
