@@ -3,16 +3,15 @@ import {Button, ButtonGroup} from 'reactstrap';
 import Chart from './Chart';
 import { getData} from "../func"
 export default class CandleChart extends Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.State={
-      mri:[]
+      mri:[1,2,3,4]
     }
   }
   tickers(){
     getData().then(data => {
         this.setState({data},()=>{
-        console.log(this.state.data)
       })
     })
   }
@@ -39,10 +38,15 @@ export default class CandleChart extends Component{
          <Button className="btn-primary text-secondary-white">1D</Button>
          <Button className="btn-primary text-secondary-white">1W</Button>
        </ButtonGroup>
+         <ButtonGroup>
        <Button  className="btn-secondary text-secondary-white ml-2">
-          <i class="fas fa-sync-alt"></i> REFRESH
+          <i className="fas fa-cogs"></i> SETTING
        </Button>
-    <Chart  data={this.state.data} />
+       <Button  className="btn-secondary text-secondary-white">
+          <i className="fas fa-sync-alt"></i> REFRESH
+       </Button>
+       </ButtonGroup>
+    <Chart  data={this.state.data} height="600" />
   </div>
   		)
   	}

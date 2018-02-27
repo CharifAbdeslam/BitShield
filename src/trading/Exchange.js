@@ -18,10 +18,24 @@ import logo from '../img/logodemo.png';
 import {Link} from "react-router-dom";
 import {_chekNav} from "../func.js";
 export default class Exchange extends Component{
-
+  constructor(props){
+    super(props);
+    this.State={
+      tickers: [],
+      currentTick:""
+    }
+  }
+  setCurrent(e){
+    console.log(e.target.innerText);
+      this.setState({currentTick:e.target.innerText})
+  }
 componentDidMount() {
-
   _chekNav();
+  fetch("https://api.bitfinex.com/v2/tickers?symbols=tETHBTC,tBCHBTC,tLTCBTC")
+     .then(response => response.json())
+     .then(data =>{
+        this.setState({tickers:data})
+     })
 }
   render(){
     return(
@@ -33,13 +47,13 @@ componentDidMount() {
                <i className="fas fa-align-left"></i>Trading
               </DropdownToggle>
               <DropdownMenu >
-                <DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
                  <span>BCH/BTC</span>
                 </DropdownItem>
-                <DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
                 <span>LTC/BTC</span>
                 </DropdownItem>
-                <DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
                 <span>ETH/BTC</span>
                 </DropdownItem>
               </DropdownMenu>
@@ -59,7 +73,7 @@ componentDidMount() {
 <Container fluid={true}>
   <Row>
     <Col xs="2">
-      <Leftexchange/>
+      <Leftexchange {...this.state}/>
     </Col>
     <Col xs="8">
       <CandleChart/>

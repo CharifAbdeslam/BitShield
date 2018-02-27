@@ -73,7 +73,7 @@ class CandleStickChartWithEquidistantChannel extends React.Component {
 			top: 20,
 			bottom: 30
 		};
-		const height = 600;
+		const height = 500;
 		const gridHeight = height - margin.top - margin.bottom;
 		const gridWidth = width - margin.left - margin.right;
 		const showGrid = true;
