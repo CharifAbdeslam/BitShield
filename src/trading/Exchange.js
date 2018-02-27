@@ -10,13 +10,17 @@ import {Navbar,
         UncontrolledDropdown,
         DropdownToggle,
         DropdownMenu,
-       DropdownItem} from 'reactstrap';
+        DropdownItem,
+        Row,
+        Col,
+        Container} from 'reactstrap';
 import logo from '../img/logodemo.png';
 import {Link} from "react-router-dom";
 import {_chekNav} from "../func.js";
 export default class Exchange extends Component{
 
 componentDidMount() {
+  
   _chekNav();
 }
   render(){
@@ -29,7 +33,7 @@ componentDidMount() {
                <i className="fas fa-align-left"></i>Trading
               </DropdownToggle>
               <DropdownMenu >
-                <DropdownItem onClick={(e)=>{console.log("clicked")}}>
+                <DropdownItem>
                  <span>BCH/BTC</span>
                 </DropdownItem>
                 <DropdownItem>
@@ -42,7 +46,7 @@ componentDidMount() {
             </UncontrolledDropdown>
            <Nav className="ml-auto" navbar>
              <NavItem>
-              <span className="text-secondary spinner_demo  mr-5">Demo version <i className="fas fa-exclamation text-primary"></i></span>
+              <span className="text-secondary spinner_demo  mr-5">Demo version <i className="fas fa-bell text-primary"></i></span>
              </NavItem>
              <NavItem>
          <Link to="/login">  <Button className="lgBtn mr-3" outline={true} color="secondary"  size="sm">LOG IN</Button></Link>
@@ -52,21 +56,19 @@ componentDidMount() {
              </NavItem>
            </Nav>
         </Navbar>
-<div className="container-fluid">
-  <div className="row">
-    <div className="col-md-2">
+<Container fluid={true}>
+  <Row>
+    <Col xs="2">
       <Leftexchange/>
-    </div>
-    <div className="col-md-7">
+    </Col>
+    <Col xs="8">
       <CandleChart/>
-    </div>
-    <div className="col-md-3">
+    </Col>
+    <Col xs="2">
       <Rightexchange />
-    </div>
-  </div>
-
-</div>
-
+    </Col>
+  </Row>
+</Container>
      </div>
    );
   }
