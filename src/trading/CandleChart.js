@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import {UncontrolledDropdown,DropdownToggle,DropdownMenu,DropdownItem } from 'reactstrap';
+import {Button, ButtonGroup} from 'reactstrap';
 import Chart from './Chart';
 import { getData} from "../func"
 export default class CandleChart extends Component{
-
+  constructor(){
+    super();
+    this.State={
+      mri:[]
+    }
+  }
   tickers(){
     getData().then(data => {
         this.setState({data},()=>{
@@ -22,21 +27,21 @@ export default class CandleChart extends Component{
   			return <div>Loading...</div>
   		}
   		return (
-  <div className="mt-3 wrapper-section pl-3">
-    <UncontrolledDropdown nav inNavbar>
-      <DropdownToggle nav caret className="mr-2">
-        MORE
-      </DropdownToggle>
-      <DropdownMenu >
-          <DropdownItem>
-            HOME
-          </DropdownItem>
-          <DropdownItem>
-            SUPPORT
-          </DropdownItem>
-      </DropdownMenu>
-      <span className="text-white">Hello test</span>
-    </UncontrolledDropdown>
+  <div className="mt-3 wrapper-section">
+    <ButtonGroup>
+         <Button className="btn-primary text-secondary-white">1MN</Button>{' '}
+         <Button className="btn-primary text-secondary-white">5MN</Button>{' '}
+         <Button className="btn-primary text-secondary-white">15MN</Button>
+         <Button className="btn-primary text-secondary-white">30MN</Button>
+         <Button className="btn-primary text-secondary-white">1H</Button>
+         <Button className="btn-primary text-secondary-white">3H</Button>
+         <Button className="btn-primary text-secondary-white">6H</Button>
+         <Button className="btn-primary text-secondary-white">1D</Button>
+         <Button className="btn-primary text-secondary-white">1W</Button>
+       </ButtonGroup>
+       <Button  className="btn-secondary text-secondary-white ml-2">
+          <i class="fas fa-sync-alt"></i> REFRESH
+       </Button>
     <Chart  data={this.state.data} />
   </div>
   		)

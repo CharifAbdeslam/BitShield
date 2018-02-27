@@ -20,7 +20,7 @@ import {_chekNav} from "../func.js";
 export default class Exchange extends Component{
 
 componentDidMount() {
-  
+
   _chekNav();
 }
   render(){
