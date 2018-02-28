@@ -9,7 +9,7 @@ $grayHard:#212529;
 $grayLighter:#ADB5BD;
 body {
   .react-stockchart{
-    height:555px!important;
+    height:575px!important;
   }
   .react-stockcharts-tooltip {
      fill: #FFFFFF;
@@ -27,6 +27,10 @@ body {
   .text-change-pos{
     font-size: 0.77rem;
     color: green;
+  }
+  .text-change-neg{
+    font-size: 0.77rem;
+    color: red;
   }
   .crypto-size{
     font-size: 3rem;

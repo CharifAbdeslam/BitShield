@@ -18,6 +18,18 @@ import logo from '../img/logodemo.png';
 import {Link} from "react-router-dom";
 import {_chekNav} from "../func.js";
 export default class Exchange extends Component{
+constructor(props){
+  super(props);
+  this.State={
+    tickers:[],
+    price:"",
+    vol:"",
+    low:"",
+    hight:"",
+    change:"",
+    changePre:""
+  }
+}
 setPrice(tick,icon,symbol,price,vol,low,hight,change,changePre){
   this.setState({
     tick:tick,
@@ -67,16 +79,16 @@ setPrice(tick,icon,symbol,price,vol,low,hight,change,changePre){
                        tickers[2][5],
                        tickers[2][6])
            break;
-        default:
-        this.setPrice("ETH/BTC",
-                      "cc ETH",
-                      "ETH",
-                      tickers[0][1],
-                      tickers[0][8],
-                      tickers[0][10],
-                      tickers[0][9],
-                      tickers[0][5],
-                      tickers[0][6])
+           default:
+           this.setPrice("ETH/BTC",
+                         "cc ETH",
+                         "ETH",
+                         tickers[0][1],
+                         tickers[0][8],
+                         tickers[0][10],
+                         tickers[0][9],
+                         tickers[0][5],
+                         tickers[0][6])
       }
   }
   getPrice(){
@@ -84,14 +96,23 @@ setPrice(tick,icon,symbol,price,vol,low,hight,change,changePre){
        .then(response => response.json())
        .then(data =>{
           this.setState({tickers:data})
+       }).then(()=>{
+         this.setState({
+           price:this.state.tickers[0][1],
+           vol:this.state.tickers[0][8],
+           low:this.state.tickers[0][10],
+           hight:this.state.tickers[0][9],
+           change:this.state.tickers[0][5]*100,
+           changePre:this.state.tickers[0][6]*100
+
+         })
        })
   }
 componentDidMount() {
+    this.getPrice()
   _chekNav();
- this.getPrice();
 }
   render(){
-
     if(this.state === null){
       return(<div>Loading</div>)
     }
