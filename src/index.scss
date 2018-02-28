@@ -8,6 +8,9 @@ $grayLight:#939393;
 $grayHard:#212529;
 $grayLighter:#ADB5BD;
 body {
+  .react-stockchart{
+    height:547px!important;
+  }
   .react-stockcharts-tooltip {
      fill: #FFFFFF;
    }
@@ -21,6 +24,10 @@ body {
     color: rgba(255,255,255,0.9);
     font-size: 0.77rem;
   }
+  .text-change-pos{
+    font-size: 0.8rem;
+    color: green;
+  }
   .crypto-size{
     font-size: 3rem;
     line-height: 55px;
@@ -31,6 +38,9 @@ body {
     border: 1px solid $btN;
   }
   .exchange-container{
+    .chart-setting{
+      float: right;
+    }
     .trading-menu{
       .dropdown-menu{
         background-color: $grayHard;
@@ -44,13 +54,11 @@ body {
         &:hover,  &:focus{
             background-color: $grayLight;
         }
-
       }
       }
       a{
         color:$btNhover;
       }
-
     }
     .header-left-control{
       line-height: 21px;

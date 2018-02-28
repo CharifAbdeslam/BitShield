@@ -1,7 +1,6 @@
 export function _chekNav(){
   var nv = document.getElementById("nvL");
   if(window.location.pathname === "/exchange"){
-
     nv.style.display = "none";
   }else{
     nv.style.display = "block";
@@ -23,7 +22,6 @@ function convertData(data) {
 	}
 	return output;
 }
-
 export function getData() {
 	const promiseData = fetch("https://api.bitfinex.com/v2/candles/trade:5m:tETHBTC/hist")
 		.then(response => response.json())
@@ -35,4 +33,17 @@ export function getData() {
 			return crvDate;
 		});
 	return promiseData;
+}
+export function _setTickers(tick,icon,symbol,price,vol,low,hight,change,changePre){
+  this.setState({
+  tick:tick,
+  icon:icon,
+  symbol:symbol,
+  price:price,
+  vol:vol,
+  low:low,
+  hight:hight,
+  change:change*100,
+  changePre:changePre*100
+  })
 }

@@ -18,30 +18,69 @@ import logo from '../img/logodemo.png';
 import {Link} from "react-router-dom";
 import {_chekNav} from "../func.js";
 export default class Exchange extends Component{
-  constructor(props){
-    super(props);
-    this.State={
-      tickers: [],
-      currentTick:""
-    }
-  }
+
   setCurrent(e){
-    console.log(e.target.innerText);
       this.setState({currentTick:e.target.innerText})
+      var {tickers} = this.state;
+      switch (e.target.innerText) {
+        case "ETH/BTC":
+         this.setState({
+           tick:"ETH/BTC",
+           icon:"cc ETH",
+           symbol:"ETH",
+           price:tickers[0][1],
+           vol:tickers[0][8],
+           low:tickers[0][10],
+           hight:tickers[0][9],
+           change:tickers[0][5]*100,
+           changePre:tickers[0][6]*100
+         })
+          break;
+       case "BCH/BTC":
+       this.setState({
+         currentTick: "BCH/BTC",
+         currentIcon:"cc BTC",
+         currentPrice:tickers[1][1],
+         currentVol:tickers[1][2]
+       })
+         break;
+         case "LTC/BTC":
+         this.setState({
+           currentTick: "LTC/BTC",
+           currentIcon:"cc LTC",
+           currentPrice:tickers[2][1],
+           currentVol:tickers[2][2]
+         })
+           break;
+        default:
+      }
   }
 componentDidMount() {
   _chekNav();
   fetch("https://api.bitfinex.com/v2/tickers?symbols=tETHBTC,tBCHBTC,tLTCBTC")
      .then(response => response.json())
      .then(data =>{
-        this.setState({tickers:data})
+        this.setState({
+          tickers:data,
+          icon:"cc ETH",
+          price:data[0][1],
+          vol:data[0][8],
+          low:data[0][10],
+          hight:data[0][9],
+          change:data[0][5]*100,
+          changePre:data[0][6]*100
+        })
      })
 }
   render(){
+
+    if(this.state === null){
+      return(<div>Loading</div>)
+    }
     return(
      <div className="container-fluid exchange-container pl-0 pr-0">
         <Navbar  light expand="md" className="navbar-demo">
-          <NavbarBrand><img src={logo} height="32"></img></NavbarBrand>
+          <NavbarBrand><img src={logo} height="32" alt="unable to load the logo"></img></NavbarBrand>
         <UncontrolledDropdown className="trading-menu ml-5" nav inNavbar>
               <DropdownToggle nav caret>
                <i className="fas fa-align-left"></i>Trading
@@ -73,7 +112,7 @@ componentDidMount() {
 <Container fluid={true}>
   <Row>
     <Col xs="2">
-      <Leftexchange {...this.state}/>
+        <Leftexchange {...this.state} />
     </Col>
     <Col xs="8">
       <CandleChart/>
