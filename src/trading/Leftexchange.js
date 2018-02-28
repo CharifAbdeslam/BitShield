@@ -4,16 +4,19 @@ import {Row,Col} from 'reactstrap';
 export default class Leftexchange extends Component{
 
   render(){
-    const {tick,
+    const {tickers,
+           tick,
            symbol,
            hight,
-           tickers,
            icon,
            price,
            vol,
            change,
            changePre,
            low} = this.props;
+           if(this.props === null){
+             return(<div>LOADING</div>)
+           }
     return(
       <div>
           <Row className="header-left-control text-center mt-3 ml-1 wrapper-section">
@@ -27,7 +30,7 @@ export default class Leftexchange extends Component{
             </Col>
             <Col xs="5">
               <span className="text-white">{price}</span><br></br>
-              <span className="text-change-pos">{change.toFixed(2)} ({changePre}%)</span><br></br>
+              <span className="text-change-pos">{change.toFixed(2)} <i className="fas fa-caret-up"></i> ({changePre.toFixed(2)}%)</span><br></br>
               <span className="text-secondary">HIGHT <span className="text-white">{hight}</span></span><br></br>
             </Col>
           </Row>
@@ -39,10 +42,16 @@ export default class Leftexchange extends Component{
   }
 }
 Leftexchange.propTypes={
-  currentTick: PropTypes.string.isRequired,
-  tickers:PropTypes.array.isRequired,
-
+  tickers:PropTypes.array.isRequired
 }
 Leftexchange.defaultProps={
-  tick: "ETH/BTC"
+  tick: "ETH/BTC",
+  icon: "cc ETH",
+  symbol:"ETH",
+  vol:100000,
+  low:100000,
+  price:100000,
+  change:100000,
+  changePre:100000,
+  hight:100000
 }

@@ -18,59 +18,77 @@ import logo from '../img/logodemo.png';
 import {Link} from "react-router-dom";
 import {_chekNav} from "../func.js";
 export default class Exchange extends Component{
-
+setPrice(tick,icon,symbol,price,vol,low,hight,change,changePre){
+  this.setState({
+    tick:tick,
+    icon:icon,
+    symbol:symbol,
+    price:price,
+    vol:vol,
+    low:low,
+    hight:hight,
+    change:change*100,
+    changePre:changePre*100
+  })
+}
   setCurrent(e){
-      this.setState({currentTick:e.target.innerText})
       var {tickers} = this.state;
       switch (e.target.innerText) {
         case "ETH/BTC":
-         this.setState({
-           tick:"ETH/BTC",
-           icon:"cc ETH",
-           symbol:"ETH",
-           price:tickers[0][1],
-           vol:tickers[0][8],
-           low:tickers[0][10],
-           hight:tickers[0][9],
-           change:tickers[0][5]*100,
-           changePre:tickers[0][6]*100
-         })
+        this.setPrice("ETH/BTC",
+                      "cc ETH",
+                      "ETH",
+                      tickers[0][1],
+                      tickers[0][8],
+                      tickers[0][10],
+                      tickers[0][9],
+                      tickers[0][5],
+                      tickers[0][6])
           break;
        case "BCH/BTC":
-       this.setState({
-         currentTick: "BCH/BTC",
-         currentIcon:"cc BTC",
-         currentPrice:tickers[1][1],
-         currentVol:tickers[1][2]
-       })
+       this.setPrice("BCH/BTC",
+                     "cc BTC",
+                     "BCH",
+                     tickers[1][1],
+                     tickers[1][8],
+                     tickers[1][10],
+                     tickers[1][9],
+                     tickers[1][5],
+                     tickers[1][6])
          break;
          case "LTC/BTC":
-         this.setState({
-           currentTick: "LTC/BTC",
-           currentIcon:"cc LTC",
-           currentPrice:tickers[2][1],
-           currentVol:tickers[2][2]
-         })
+         this.setPrice("LTC/BTC",
+                       "cc LTC",
+                       "LTC",
+                       tickers[2][1],
+                       tickers[2][8],
+                       tickers[2][10],
+                       tickers[2][9],
+                       tickers[2][5],
+                       tickers[2][6])
            break;
         default:
+        this.setPrice("ETH/BTC",
+                      "cc ETH",
+                      "ETH",
+                      tickers[0][1],
+                      tickers[0][8],
+                      tickers[0][10],
+                      tickers[0][9],
+                      tickers[0][5],
+                      tickers[0][6])
       }
+  }
+  getPrice(){
+    fetch("https://api.bitfinex.com/v2/tickers?symbols=tETHBTC,tBCHBTC,tLTCBTC")
+       .then(response => response.json())
+       .then(data =>{
+          this.setState({tickers:data})
+       })
   }
 componentDidMount() {
   _chekNav();
-  fetch("https://api.bitfinex.com/v2/tickers?symbols=tETHBTC,tBCHBTC,tLTCBTC")
-     .then(response => response.json())
-     .then(data =>{
-        this.setState({
-          tickers:data,
-          icon:"cc ETH",
-          price:data[0][1],
-          vol:data[0][8],
-          low:data[0][10],
-          hight:data[0][9],
-          change:data[0][5]*100,
-          changePre:data[0][6]*100
-        })
-     })
+ this.getPrice();
 }
   render(){
 

@@ -34,16 +34,3 @@ export function getData() {
 		});
 	return promiseData;
 }
-export function _setTickers(tick,icon,symbol,price,vol,low,hight,change,changePre){
-  this.setState({
-  tick:tick,
-  icon:icon,
-  symbol:symbol,
-  price:price,
-  vol:vol,
-  low:low,
-  hight:hight,
-  change:change*100,
-  changePre:changePre*100
-  })
-}

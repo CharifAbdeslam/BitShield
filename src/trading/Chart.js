@@ -162,9 +162,9 @@ class CandleStickChartWithEquidistantChannel extends React.Component {
 
 					<BarSeries yAccessor={d => d.volume} fill={d => d.close > d.open ? "rgba(137, 200, 255,0.3)" : "rgba(137, 200, 255,0.3)"} />
 				</Chart>
-				<Chart id={3} height={100}
+				<Chart id={3} height={150}
 					yExtents={macdCalculator.accessor()}
-					origin={(w, h) => [0, h - 150]} padding={{ top: 40, bottom: 5 }}
+					origin={(w, h) => [0, h - 190]} padding={{ top: 1, bottom: 15 }}
 				>
 					<XAxis axisAt="bottom" orient="bottom" stroke="#CCCCCC" tickStroke="#CCCCCC"/>
 					<YAxis axisAt="right" orient="right" stroke="#CCCCCC" tickStroke="#CCCCCC" showTicks={false} ticks={0}/>
