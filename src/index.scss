@@ -8,6 +8,22 @@ $grayLight:#939393;
 $grayHard:#212529;
 $grayLighter:#ADB5BD;
 body {
+.tb-market > thead > tr > th{
+    border:0.5px white;
+    font-weight: normal;
+}
+.market-ico{
+  font-size: 1.2rem;
+}
+.tb-market{
+  td,th{
+    border-top:0.5px solid  rgba(255,255,255,0.1);
+  }
+
+}
+  .text-white{
+    color: #E6E6E6!important;
+  }
   .react-stockchart{
     height:575px!important;
   }

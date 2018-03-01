@@ -28,26 +28,24 @@ export default class CandleChart extends Component {
       <Row>
         <Col>
           <ButtonGroup>
-            <Button className="btn-primary text-secondary-white">1MN</Button>{' '}
-            <Button className="btn-primary text-secondary-white">5MN</Button>{' '}
-            <Button className="btn-primary text-secondary-white">15MN</Button>
-            <Button className="btn-primary text-secondary-white">30MN</Button>
-            <Button className="btn-primary text-secondary-white">1H</Button>
-            <Button className="btn-primary text-secondary-white">3H</Button>
-            <Button className="btn-primary text-secondary-white">6H</Button>
-            <Button className="btn-primary text-secondary-white">1D</Button>
-            <Button className="btn-primary text-secondary-white">1W</Button>
+            <Button className="btn-secondary text-secondary-white">1MN</Button>{' '}
+            <Button className="btn-secondary text-secondary-white">5MN</Button>{' '}
+            <Button className="btn-secondary text-secondary-white">15MN</Button>
+            <Button className="btn-secondary text-secondary-white">30MN</Button>
+            <Button className="btn-secondary text-secondary-white">1H</Button>
+            <Button className="btn-secondary text-secondary-white">3H</Button>
+            <Button className="btn-secondary text-secondary-white">6H</Button>
+            <Button className="btn-secondary text-secondary-white">1D</Button>
+            <Button className="btn-secondary text-secondary-white">1W</Button>
           </ButtonGroup>
         </Col>
       <Col>
         <ButtonGroup className="chart-setting" >
-          <Button className="btn-primary text-secondary-white ml-2">
+          <Button className="btn-secondary text-secondary-white ml-2">
             <i className="fas fa-cogs"></i>
-            SETTING
           </Button>
-          <Button className="btn-primary text-secondary-white">
+          <Button className="btn-secondary text-secondary-white">
             <i className="fas fa-sync-alt"></i>
-            REFRESH
           </Button>
         </ButtonGroup>
       </Col>

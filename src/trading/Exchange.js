@@ -104,7 +104,6 @@ setPrice(tick,icon,symbol,price,vol,low,hight,change,changePre){
            hight:this.state.tickers[0][9],
            change:this.state.tickers[0][5]*100,
            changePre:this.state.tickers[0][6]*100
-
          })
        })
   }
