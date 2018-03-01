@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Table } from 'reactstrap';
+import { Table ,Button} from 'reactstrap';
 export default class Market extends Component{
+
   retPrice(ico,price,color,changes,caretdown,changePres,vol){
-    return(<tr>
-           <th><i class="far fa-star"></i></th>
+    return(<tr key={ico}>
+           <th><i className="far fa-star"></i></th>
            <td><span className={ico + "  market-ico"}></span></td>
            <td>{price}</td>
           <td><span className={color}>{changes}
@@ -32,34 +33,40 @@ export default class Market extends Component{
         }
       switch(tick[0]){
         case "tETHBTC":
-        return(this.retPrice("cc ETH",price,color,changes,caretdown,changePres,vol))
-              break;
+        return(this.retPrice("cc ETH",price,color,changes,caretdown,changePres,vol));
+
         case "tLTCBTC":
-        return(this.retPrice("cc LTC",price,color,changes,caretdown,changePres,vol))
-              break;
+        return(this.retPrice("cc LTC",price,color,changes,caretdown,changePres,vol));
+
         case "tBCHBTC":
-        return(this.retPrice("cc BTC",price,color,changes,caretdown,changePres,vol))
+        return(this.retPrice("cc BTC",price,color,changes,caretdown,changePres,vol));
+        default:
+          return(<div>Loading</div>)
       }
+      return(<div>Loading</div>)
     })
   return listTick;
   }
   render(){
-    const {tickers} = this.props;
-    return( <Table className="tb-market text-secondary text-white mb-0 text-center" size="sm" responsive hover>
-        <thead>
-          <tr>
-            <th><i class="far fa-star"></i></th>
-            <th>Symbol</th>
-            <th>Last</th>
-            <th>24h</th>
-            <th>Vol</th>
-          </tr>
-        </thead>
-        <tbody className="text-center">
-          {
-             this.listTick()
-          }
-        </tbody>
-      </Table>)
+    return(
+      <div>
+        <Table className="tb-market text-secondary text-white mb-0 text-center" size="sm" responsive hover>
+         <thead>
+           <tr>
+             <th><i className="far fa-star"></i></th>
+             <th>Symbol</th>
+             <th>Last</th>
+             <th>24h</th>
+             <th>Vol</th>
+           </tr>
+         </thead>
+         <tbody className="text-center">
+           {
+              this.listTick()
+           }
+         </tbody>
+       </Table>
+     </div>)
+
   }
 }

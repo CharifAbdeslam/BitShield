@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import {Row,Col} from 'reactstrap';
 export default class Leftexchange extends Component{
   render(){
-    const {tickers,
+    const {
            tick,
            symbol,
            hight,
