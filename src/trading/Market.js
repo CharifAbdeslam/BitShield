@@ -28,7 +28,7 @@ constructor(props){
         var change = (tick[5]*100).toFixed(2).toString();
         var changePre = (tick[6]*100).toFixed(2).toString();
         var changes = change.replace("-","");
-        var changePres = changePre.replace("-","");
+        var changePres = changePre.replace("-","");  
         let color=null
         let caretdown=null
         if(changePre.indexOf("-") === 0){
@@ -51,12 +51,10 @@ constructor(props){
         return(this.retPrice("cc ETC",price,color,changes,caretdown,changePres,vol));
         case "tXRPBTC":
         return(this.retPrice("cc XRP",price,color,changes,caretdown,changePres,vol));
-        case "tNEOBTC":
-        return(this.retPrice("cc NEM",price,color,changes,caretdown,changePres,vol));
         case "tZECBTC":
         return(this.retPrice("cc ZEC",price,color,changes,caretdown,changePres,vol));
-        case "tBTSBTC":
-        return(this.retPrice("cc BTS",price,color,changes,caretdown,changePres,vol));
+        case "tIOTBTC":
+        return(this.retPrice("cc IOTA",price,color,changes,caretdown,changePres,vol));
         default:
           return(<div>Loading</div>)
       }
