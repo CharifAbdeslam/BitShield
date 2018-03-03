@@ -8,10 +8,23 @@ $grayLight:#939393;
 $grayHard:#212529;
 $grayLighter:#ADB5BD;
 body {
-
+.filter-container{
+  display: flex;
+  span{
+    font-size: 0.7rem;
+    flex:1;
+    margin-top: 3px;
+  }
+  input{
+    margin-top: 2px;
+    height: 21px;
+    flex:4;
+  }
+}
 .tb-market > thead > tr > th{
     border:0.5px white;
     font-weight: normal;
+
 }
 .market-ico{
   font-size: 1.2rem;
@@ -19,6 +32,7 @@ body {
 .tb-market{
   td,th{
     border-top:0.5px solid  rgba(255,255,255,0.1);
+    font-size: 0.7rem;
   }
 
 }

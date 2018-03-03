@@ -92,7 +92,7 @@ setPrice(tick,icon,symbol,price,vol,low,hight,change,changePre){
       }
   }
   getPrice(){
-    fetch("https://api.bitfinex.com/v2/tickers?symbols=tETHBTC,tBCHBTC,tLTCBTC")
+    fetch("https://api.bitfinex.com/v2/tickers?symbols=tETHBTC,tBCHBTC,tLTCBTC,tXMRBTC,tXRPBTC,tETCBTC,tZECBTC,tNEOBTC")
        .then(response => response.json())
        .then(data =>{
           this.setState({tickers:data})
