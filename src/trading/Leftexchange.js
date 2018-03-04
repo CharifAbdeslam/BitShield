@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Market from "./Market";
+import TradingForm from "./TradingForm";
 import PropTypes from "prop-types";
 import {Row,Col} from 'reactstrap';
 export default class Leftexchange extends Component{
@@ -50,6 +51,9 @@ export default class Leftexchange extends Component{
           <Row className="header-left-control mt-3 ml-1 wrapper-section">
             <Market {...this.props}/>
           </Row>
+          <Row className="header-left-control mt-3 ml-1 wrapper-section">
+          <TradingForm/>
+        </Row>
         </div>
     )
   }

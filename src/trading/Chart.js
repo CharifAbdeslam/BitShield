@@ -65,8 +65,8 @@ class CandleStickChartWithEquidistantChannel extends React.Component {
 			displayXAccessor,
 		} = xScaleProvider(calculatedData);
 		const start = xAccessor(last(data));
-		const end = xAccessor(data[Math.max(0, data.length - 98)]);
-		const xExtents = [start, end+50];
+		const end = xAccessor(data[Math.max(0, data.length - 100)]);
+		const xExtents = [start, end+20];
 		const margin = {
 			left: 70,
 			right: 70,
