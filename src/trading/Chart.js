@@ -65,8 +65,8 @@ class CandleStickChartWithEquidistantChannel extends React.Component {
 			displayXAccessor,
 		} = xScaleProvider(calculatedData);
 		const start = xAccessor(last(data));
-		const end = xAccessor(data[Math.max(0, data.length - 150)]);
-		const xExtents = [start, end+40];
+		const end = xAccessor(data[Math.max(0, data.length - 98)]);
+		const xExtents = [start, end+50];
 		const margin = {
 			left: 70,
 			right: 70,
@@ -91,6 +91,7 @@ class CandleStickChartWithEquidistantChannel extends React.Component {
 			: {};
 		return (
 			<ChartCanvas
+
 				height={600}
 				width={width}
 				ratio={ratio}
@@ -107,7 +108,7 @@ class CandleStickChartWithEquidistantChannel extends React.Component {
 					padding={{ top: 10, bottom: 20 }}
 				>
 					<XAxis axisAt="bottom" orient="bottom" stroke="#CCCCCC" tickStroke="#CCCCCC"  {...xGrid} />
-					<YAxis axisAt="right" tickStroke="#CCCCCC"  orient="right" ticks={7}  {...yGrid} />
+					<YAxis axisAt="right" tickStroke="#CCCCCC"  orient="right" ticks={12}  {...yGrid} />
 					<MouseCoordinateY
 						at="right"
 						orient="right"
@@ -116,22 +117,19 @@ class CandleStickChartWithEquidistantChannel extends React.Component {
 							at="bottom"
 							orient="bottom"
 							displayFormat={timeFormat("%H:%M:%S")} />
-
-					<CandlestickSeries opacity={1} stroke={d => d.close > d.open
-						? "#09f419"
-						: "#FB0303"} wickStroke={d => d.close > d.open
-							? "#09f419"
-							: "#FB0303"} fill={d => d.close > d.open
-								? "#09f419"
-								: "#FB0303"} />
+					<CandlestickSeries opacity={1} widthRatio= {0.6} candleStrokeWidth={1.5} stroke={d => d.close > d.open
+						? "#559B4F"
+						: "#FF6939"} wickStroke={d => d.close > d.open
+							? "#559B4F"
+							: "#FF6939"} fill={d => d.close > d.open
+								? "#00000000"
+								: "#FF6939"}/>
 					<LineSeries yAccessor={ema26.accessor()} stroke={ema26.stroke()}/>
 					<LineSeries yAccessor={ema12.accessor()} stroke={ema12.stroke()}/>
-
 					<CurrentCoordinate yAccessor={ema26.accessor()} fill={ema26.stroke()} />
 					<CurrentCoordinate yAccessor={ema12.accessor()} fill={ema12.stroke()} />
-
 					<EdgeIndicator itemType="last" orient="right" edgeAt="right" displayFormat={format(".7f")}
-						yAccessor={d => d.close} fill={d => d.close > d.open ? "#6BA583" : "#FB0303"}/>
+						yAccessor={d => d.close} fill={d => d.close > d.open ? "#559B4F" : "#FF6939"}/>
 
 					<OHLCTooltip origin={[-40, 0]}/>
 
@@ -159,12 +157,11 @@ class CandleStickChartWithEquidistantChannel extends React.Component {
 					yExtents={[d => d.volume]}
 					origin={(w, h) => [0, h - 300]}
 				>
-
 					<BarSeries yAccessor={d => d.volume} fill={d => d.close > d.open ? "rgba(137, 200, 255,0.3)" : "rgba(137, 200, 255,0.3)"} />
 				</Chart>
-				<Chart id={3} height={150}
+				<Chart id={3} height={100}
 					yExtents={macdCalculator.accessor()}
-					origin={(w, h) => [0, h - 170]} padding={{ top: 40, bottom: 0 }}
+					origin={(w, h) => [0, h - 150]} padding={{ top: 0, bottom: 20 }}
 				>
 					<XAxis axisAt="bottom" orient="bottom" stroke="#CCCCCC" tickStroke="#CCCCCC"/>
 					<YAxis axisAt="right" orient="right" stroke="#CCCCCC" tickStroke="#CCCCCC" showTicks={false} ticks={0}/>

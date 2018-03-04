@@ -44,7 +44,7 @@ setPrice(tick,icon,symbol,price,vol,low,hight,change,changePre){
   })
 }
   setCurrent(e){
-      var {tickers} = this.state;
+      const {tickers} = this.state;
       switch (e.target.innerText) {
         case "ETH/BTC":
         this.setPrice("ETH/BTC",
@@ -92,18 +92,21 @@ setPrice(tick,icon,symbol,price,vol,low,hight,change,changePre){
       }
   }
   getPrice(){
-    fetch("https://api.bitfinex.com/v2/tickers?symbols=tETHBTC,tBCHBTC,tLTCBTC,tXMRBTC,tXRPBTC,tETCBTC,tZECBTC,tIOTBTC")
+
+    const url = "https://api.bitfinex.com/v2/tickers?symbols=";
+    fetch(url+"tETHBTC,tBCHBTC,tLTCBTC,tXMRBTC,tXRPBTC,tETCBTC,tZECBTC,tIOTBTC,tDSHBTC,tNEOBTC,tGNTBTC,tREPBTC,tEOSBTC")
        .then(response => response.json())
        .then(data =>{
           this.setState({tickers:data})
        }).then(()=>{
+         const {tickers} = this.state;
          this.setState({
-           price:this.state.tickers[0][1],
-           vol:this.state.tickers[0][8],
-           low:this.state.tickers[0][10],
-           hight:this.state.tickers[0][9],
-           change:this.state.tickers[0][5]*100,
-           changePre:this.state.tickers[0][6]*100
+           price:tickers[0][1],
+           vol:tickers[0][8],
+           low:tickers[0][10],
+           hight:tickers[0][9],
+           change:tickers[0][5]*100,
+           changePre:tickers[0][6]*100
          })
        })
   }

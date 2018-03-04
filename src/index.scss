@@ -13,12 +13,16 @@ body {
   span{
     font-size: 0.7rem;
     flex:1;
-    margin-top: 3px;
+    margin-top: 4px;
   }
   input{
-    margin-top: 2px;
+    margin-top: 4px;
     height: 21px;
     flex:4;
+    border-radius: 5px;
+background-color: #5A6268;
+color: #E6E6E6;
+border-color: #4AC9C6;
   }
 }
 .tb-market > thead > tr > th{
@@ -40,7 +44,7 @@ body {
     color: #E6E6E6!important;
   }
   .react-stockchart{
-    height:575px!important;
+    height:552px!important;
   }
   .react-stockcharts-tooltip {
      fill: #FFFFFF;
@@ -58,11 +62,11 @@ body {
   }
   .text-change-pos{
     font-size: 0.77rem;
-    color: green;
+    color: #559B4F;
   }
   .text-change-neg{
     font-size: 0.77rem;
-    color: red;
+    color: #FF6939;
   }
   .crypto-size{
     font-size: 3rem;
