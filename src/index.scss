@@ -12,6 +12,27 @@ $red:#FF6939;
 body {
   .tradinform_wrapper{
     border-right: solid 1px #4AC9C6;
+    .divider{
+      background-color: grey;
+      margin: 0;
+    }
+    input{
+      height: 29px;
+border: solid 1px #2daaa7;
+background-color: $grayLighter;
+color: white;
+   &:focus{
+     color:  white;
+background-color: $grayLighter;
+border-color: #2daaa7;
+outline: 0;
+box-shadow: none;
+   }
+    }
+    span{
+      font-size: 0.8rem;
+      height: 29px;
+    }
   }
   .titlebuy{
     color: $green;
@@ -22,7 +43,7 @@ body {
   }
   .tr-form{
 .collapse.show{
-  min-height: 224px;
+  min-height: 200px;
 }
     width: 100%;
     span{

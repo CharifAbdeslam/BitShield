@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import {Row, Col} from 'reactstrap';
+import {Row, Col,InputGroup, InputGroupAddon,Input} from 'reactstrap';
 export default class TraddingForm extends Component{
   render(){
     return(<Row>
       <Col className="tradinform_wrapper">
-        <h3 className="titlebuy ml-2 mt-3">BUY</h3>
-        <hr></hr>
-        <div>
-          <input type="text"/>
-          <label className="text-white">Price</label>
+        <div className="p-4">
+          <h3 className="titlebuy">BUY</h3>
+          <hr className="divider mb-2"></hr>
+          <div>
+             <InputGroup>
+            <Input/>
+        <InputGroupAddon  className="addOn" addonType="append">ETH</InputGroupAddon>
+      </InputGroup>
+          </div>
         </div>
+
 
       </Col>
         <Col className="tradinform_wrapper">
