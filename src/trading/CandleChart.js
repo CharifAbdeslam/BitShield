@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Button, ButtonGroup,Row, Col} from 'reactstrap';
 import Chart from './Chart';
 import {getData} from "../func"
+import TraddingForm from "./TraddingForm";
 export default class CandleChart extends Component {
   constructor(props) {
     super(props);
@@ -24,12 +25,13 @@ export default class CandleChart extends Component {
     if (this.state == null) {
       return <div>Loading...</div>
     }
-    return (<div className="mt-3 wrapper-section">
+    return (<div>
+      <div className="mt-3 wrapper-section">
       <Row>
         <Col>
           <ButtonGroup>
-            <Button className="btn-secondary text-secondary-white">1MN</Button>{' '}
-            <Button className="btn-secondary text-secondary-white">5MN</Button>{' '}
+            <Button className="btn-secondary text-secondary-white">1MN</Button>
+            <Button className="btn-secondary text-secondary-white">5MN</Button>
             <Button className="btn-secondary text-secondary-white">15MN</Button>
             <Button className="btn-secondary text-secondary-white">30MN</Button>
             <Button className="btn-secondary text-secondary-white">1H</Button>
@@ -49,11 +51,14 @@ export default class CandleChart extends Component {
           </Button>
         </ButtonGroup>
       </Col>
-
       </Row>
+      <Chart {...this.state} height="600"/>
 
-      <Chart data={this.state.data} height="600"/>
-    </div>)
+    </div>
+
+  <div className="mt-3 wrapper-section">
+    <TraddingForm />
+  </div>
+</div>)
   }
-
 }
