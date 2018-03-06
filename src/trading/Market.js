@@ -82,7 +82,7 @@ constructor(props){
     return(
       <div>
         <div className="filter-container">
-          <span className="text-secondary-white ml-2">MARKETS</span>
+          <span className="text-secondary-white ml-2 mr-2">MARKETS</span>
           <input type="text" ref="filt" onChange={this.filterData}></input>
         </div>
         <Table className="tb-market text-secondary text-white mb-0 text-center" size="sm" responsive hover>

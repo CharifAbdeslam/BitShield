@@ -12,26 +12,40 @@ $red:#FF6939;
 body {
   .tradinform_wrapper{
     border-right: solid 1px #4AC9C6;
+  }
+  .tradinform_wrapperS,.tradinform_wrapper{    
     .divider{
       background-color: grey;
       margin: 0;
     }
     input{
-      height: 29px;
+      height: 22px;
 border: solid 1px #2daaa7;
-background-color: $grayLighter;
+border-right-color: transparent;
+background-color: gray!important;
 color: white;
+border-radius: 4px 0 0 4px!important;
    &:focus{
      color:  white;
-background-color: $grayLighter;
+background-color: gray;
 border-color: #2daaa7;
 outline: 0;
 box-shadow: none;
    }
     }
     span{
+      font-size: 0.7rem;
+      height: 22px;
+      border-left-color: transparent;
+    }
+    label{
       font-size: 0.8rem;
-      height: 29px;
+      width: 110px;
+    }
+    button{
+      font-size: 0.7rem;
+      float: right;
+      height: 28px;
     }
   }
   .titlebuy{
@@ -63,6 +77,7 @@ box-shadow: none;
     height: 21px;
     flex:4;
     margin-right: 20px;
+    border-radius: 4px;
 background-color: #5A6268;
 color: #E6E6E6;
 border: 1px solid #4AC9C6;
