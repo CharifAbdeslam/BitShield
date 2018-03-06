@@ -28,7 +28,6 @@ export default class OrderHistory extends Component{
             </tr>
           </thead>
         </Table>
-
         </Collapse>
     </div>)
   }

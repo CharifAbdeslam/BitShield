@@ -13,7 +13,7 @@ body {
   .tradinform_wrapper{
     border-right: solid 1px #4AC9C6;
   }
-  .tradinform_wrapperS,.tradinform_wrapper{    
+  .tradinform_wrapperS,.tradinform_wrapper{
     .divider{
       background-color: grey;
       margin: 0;
@@ -47,6 +47,12 @@ box-shadow: none;
       float: right;
       height: 28px;
     }
+    btn-sell{
+      background-color: $red;
+    }
+    btn-buy{
+      background-color: $green;
+    }
   }
   .titlebuy{
     color: $green;
@@ -57,7 +63,7 @@ box-shadow: none;
   }
   .tr-form{
 .collapse.show{
-  min-height: 200px;
+  min-height: 221px;
 }
     width: 100%;
     span{

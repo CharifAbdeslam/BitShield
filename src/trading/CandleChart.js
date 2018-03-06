@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Button, ButtonGroup,Row, Col} from 'reactstrap';
 import Chart from './Chart';
-import {getData} from "../func"
-import TraddingForm from "./TraddingForm";
+import {getData} from "../func";
 export default class CandleChart extends Component {
   constructor(props) {
     super(props);
@@ -52,13 +51,10 @@ export default class CandleChart extends Component {
         </ButtonGroup>
       </Col>
       </Row>
-      <Chart {...this.state} height="600"/>
-
+      <Chart {...this.state}/>
     </div>
 
-  <div className="mt-3 wrapper-section">
-    <TraddingForm />
-  </div>
+
 </div>)
   }
 }

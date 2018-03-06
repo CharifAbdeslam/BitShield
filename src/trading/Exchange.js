@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Rightexchange from './Rightexchange';
 import Leftexchange from './Leftexchange';
 import CandleChart from './CandleChart';
+import TraddingForm from "./TraddingForm";
 import {Navbar,
         Nav,
         Button,
@@ -92,7 +93,6 @@ setPrice(tick,icon,symbol,price,vol,low,hight,change,changePre){
       }
   }
   getPrice(){
-
     const url = "https://api.bitfinex.com/v2/tickers?symbols=";
     fetch(url+"tETHBTC,tBCHBTC,tLTCBTC,tXMRBTC,tXRPBTC,tETCBTC,tZECBTC,tIOTBTC,tDSHBTC,tNEOBTC,tGNTBTC,tREPBTC,tEOSBTC")
        .then(response => response.json())
@@ -156,7 +156,8 @@ componentDidMount() {
         <Leftexchange {...this.state} />
     </Col>
     <Col xs="8">
-      <CandleChart/>
+        <CandleChart/>
+        <TraddingForm {...this.state} />
     </Col>
     <Col xs="2">
       <Rightexchange />
