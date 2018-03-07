@@ -10,6 +10,31 @@ $grayLighter:#ADB5BD;
 $green:#559B4F;
 $red:#FF6939;
 body {
+  .track-vertical{
+    background-color: green;
+  }
+  .bgSell{
+  color: $red;
+  background-color: rgba(234, 55, 23,0.01);
+  }
+  .bgBuy{
+  color: $green;
+  background-color: rgba(81, 255, 79,0.01);
+  }
+  .trade-history{
+    height: 851px;
+    overflow-y: hidden;
+    width: 100%;
+    table > thead > tr > th{
+        border:0.5px white;
+        font-weight: normal;
+    }
+
+    td,th{
+      border-top:0.5px solid  rgba(255,255,255,0.1);
+      font-size: 0.7rem;
+    }
+  }
   .tradinform_wrapper{
     border-right: solid 1px #4AC9C6;
   }
@@ -19,11 +44,13 @@ body {
       margin: 0;
     }
     input{
+      text-align: right;
       height: 22px;
 border: solid 1px #2daaa7;
 border-right-color: transparent;
 background-color: gray!important;
 color: white;
+padding: 1px;
 border-radius: 4px 0 0 4px!important;
    &:focus{
      color:  white;
@@ -57,7 +84,6 @@ box-shadow: none;
   .titlebuy{
     color: $green;
   }
-
   .titlesell{
     color: $red;
   }
@@ -68,7 +94,7 @@ box-shadow: none;
     width: 100%;
     span{
       cursor: pointer;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
     }
   }
 .filter-container{

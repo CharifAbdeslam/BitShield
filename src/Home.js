@@ -21,7 +21,7 @@ export default class Home extends Component{
            <Link to="/exchange"><Button className="text-white" color="primary">VIEW EXCHANGE</Button></Link>
         </div>
         <div className="col-md-8">
-          <img src={ExchangeAnimation} className="img-fluid imgBnr" alt="Unable to load the exchange..."/>
+          <img src={ExchangeAnimation} className="img-fluid" alt="Unable to load the exchange..."/>
         </div>
         </div>
       </div>

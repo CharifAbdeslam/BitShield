@@ -11,14 +11,14 @@ export default class TraddingForm extends Component {
           <div>
             <InputGroup>
               <label className="text-white mr-2">Price:</label>
-              <Input readonly="yes"/>
+              <Input readOnly="yes"/>
               <InputGroupAddon className="addOn" addonType="append">BTC</InputGroupAddon>
             </InputGroup>
           </div>
           <div className="mt-3">
             <InputGroup>
               <label className="text-white mr-2">Amount:</label>
-              <Input readonly="yes"/>
+              <Input/>
               <InputGroupAddon className="addOn" addonType="append">ETH</InputGroupAddon>
             </InputGroup>
           </div>
@@ -26,7 +26,7 @@ export default class TraddingForm extends Component {
           <div className="mt-3">
             <InputGroup>
               <label className="text-white mr-2">Total:</label>
-              <Input readonly="yes"/>
+              <Input readOnly="yes"/>
               <InputGroupAddon className="addOn" addonType="append">BTC</InputGroupAddon>
             </InputGroup>
           </div>
@@ -43,15 +43,15 @@ export default class TraddingForm extends Component {
           <hr className="divider mb-3"></hr>
           <div>
             <InputGroup>
-              <label className="text-white mr-2">Price:</label>
-              <Input readonly="yes"/>
+              <label className="text-white mr-2">Limit:</label>
+              <Input/>
               <InputGroupAddon className="addOn" addonType="append">BTC</InputGroupAddon>
             </InputGroup>
           </div>
           <div className="mt-3">
             <InputGroup>
               <label className="text-white mr-2">Amount:</label>
-              <Input readonly="yes"/>
+              <Input/>
               <InputGroupAddon className="addOn" addonType="append">ETH</InputGroupAddon>
             </InputGroup>
           </div>
@@ -59,7 +59,7 @@ export default class TraddingForm extends Component {
           <div className="mt-3">
             <InputGroup>
               <label className="text-white mr-2">Total:</label>
-              <Input readonly="yes"/>
+              <Input readOnly="yes"/>
               <InputGroupAddon className="addOn" addonType="append">BTC</InputGroupAddon>
             </InputGroup>
           </div>
@@ -76,14 +76,14 @@ export default class TraddingForm extends Component {
           <div>
             <InputGroup>
               <label className="text-white mr-2">Price:</label>
-              <Input readonly="yes"/>
+              <Input readOnly="yes"/>
               <InputGroupAddon className="addOn" addonType="append">BTC</InputGroupAddon>
             </InputGroup>
           </div>
           <div className="mt-3">
             <InputGroup>
               <label className="text-white mr-2">Amount:</label>
-              <Input readonly="yes"/>
+              <Input/>
               <InputGroupAddon className="addOn" addonType="append">ETH</InputGroupAddon>
             </InputGroup>
           </div>
@@ -91,7 +91,7 @@ export default class TraddingForm extends Component {
           <div className="mt-3">
             <InputGroup>
               <label className="text-white mr-2">Total:</label>
-              <Input readonly="yes"/>
+              <Input readOnly="yes"/>
               <InputGroupAddon className="addOn" addonType="append">BTC</InputGroupAddon>
             </InputGroup>
           </div>

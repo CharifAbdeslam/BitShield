@@ -34,3 +34,8 @@ export function getData() {
 		});
 	return promiseData;
 }
+export function _getTrade(){
+  const promiseTrade =   fetch("https://api.bitfinex.com/v2/trades/tETHBTC/hist")
+         .then(response =>response.json())
+         return promiseTrade;
+}
