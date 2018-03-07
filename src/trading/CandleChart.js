@@ -25,7 +25,7 @@ export default class CandleChart extends Component {
       return <div>Loading...</div>
     }
     return (<div>
-      <div className="mt-3 wrapper-section">
+      <div className="mt-2 wrapper-section">
       <Row>
         <Col>
           <ButtonGroup>

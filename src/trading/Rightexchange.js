@@ -16,18 +16,11 @@ export default class Rightexchange extends Component{
   render(){
     const {trade} = this.state;
     const time = timeFormat("%H:%M:%S");
-    const buyColor="bgBuy";
-    const sellColor="bgSell";
-    const sellIco = "fas fa-arrow-circle-down";
-    const buyIco= "fas fa-arrow-circle-up";
     var color,ico;
     return(
-      <Row className="wrapper-section mt-3 mr-2">
+      <Row className="wrapper-section mt-2 mr-2">
         <div className="trade-history">
           <span className="text-secondary-white ml-2">Trade History</span>
-          <Scrollbars renderThumbVertical={({ style, ...props }) =>
-   <div {...props} style={{ ...style, backgroundColor: '#4ac9c6', width: '4px', opacity: '0.4'}}/>
-}>
           <Table className="text-secondary text-white mb-0 text-center" size="sm" responsive>
            <thead>
              <tr>
@@ -36,16 +29,20 @@ export default class Rightexchange extends Component{
                <th>Price</th>
              </tr>
            </thead>
-
+         </Table>
+          <Scrollbars renderThumbVertical={() =>
+   <div style={{backgroundColor: '#4ac9c6', width: '4px', opacity: '0.4' ,borderRadius: '5px'}}/>
+}>
+          <Table className="text-secondary text-white mb-0 text-center" size="sm" responsive>
            <tbody className="text-center">
              {
                trade.map(trade=>{
                  if(trade[2] > 0 ){
-                   color=buyColor;
-                   ico=buyIco
+                   color="bgBuy";
+                   ico="fas fa-arrow-circle-up";
                  }else{
-                   color=sellColor;
-                   ico=sellIco;
+                   color="bgSell";
+                   ico="fas fa-arrow-circle-down";
                  }
                  return(<tr className={color} key={trade[0]}>
                         <th>{time(trade[1])}</th>
@@ -55,7 +52,6 @@ export default class Rightexchange extends Component{
                })
              }
            </tbody>
-
          </Table>
           </Scrollbars>
         </div>

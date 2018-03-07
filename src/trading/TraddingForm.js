@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Row, Col, InputGroup, InputGroupAddon, Input,Button} from 'reactstrap';
 export default class TraddingForm extends Component {
   render() {
-    return (  <div className="mt-3 wrapper-section">
+    const price = parseFloat(this.props.low).toFixed(7);
+    return (  <div className="mt-2 wrapper-section">
       <Row>
       <Col className="tradinform_wrapper">
         <div className="p-2">
@@ -11,7 +12,7 @@ export default class TraddingForm extends Component {
           <div>
             <InputGroup>
               <label className="text-white mr-2">Price:</label>
-              <Input readOnly="yes"/>
+              <Input readOnly="yes" value={price}/>
               <InputGroupAddon className="addOn" addonType="append">BTC</InputGroupAddon>
             </InputGroup>
           </div>
@@ -76,7 +77,7 @@ export default class TraddingForm extends Component {
           <div>
             <InputGroup>
               <label className="text-white mr-2">Price:</label>
-              <Input readOnly="yes"/>
+              <Input readOnly="yes" value={price}/>
               <InputGroupAddon className="addOn" addonType="append">BTC</InputGroupAddon>
             </InputGroup>
           </div>

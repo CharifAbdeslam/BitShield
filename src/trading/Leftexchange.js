@@ -31,7 +31,7 @@ export default class Leftexchange extends Component{
            }
     return(
       <div>
-          <Row className="header-left-control text-center mt-3 ml-1 wrapper-section">
+          <Row className="header-left-control text-center mt-2 ml-1 wrapper-section">
             <Col xs="2">
               <i className={icon + " crypto-size text-white"}></i>
             </Col>
@@ -48,10 +48,10 @@ export default class Leftexchange extends Component{
               <span className="text-secondary">HIGHT <span className="text-white">{hight.toFixed(6)}</span></span><br></br>
             </Col>
           </Row>
-          <Row className="header-left-control mt-3 ml-1 wrapper-section">
+          <Row className="header-left-control mt-2 ml-1 wrapper-section">
             <Market {...this.props}/>
           </Row>
-          <Row className="header-left-control mt-3 ml-1 wrapper-section">
+          <Row className="header-left-control mt-2 ml-1 wrapper-section">
           <OrderHistory/>
         </Row>
         </div>

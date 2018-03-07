@@ -25,17 +25,11 @@ function convertData(data) {
 export function getData() {
 	const promiseData = fetch("https://api.bitfinex.com/v2/candles/trade:5m:tETHBTC/hist")
 		.then(response => response.json())
-		.then(data => {
-			var crvDate = convertData(data)
-			crvDate.sort((a, b) => {
-				return a.date.valueOf() - b.date.valueOf();
-			});
-			return crvDate;
-		});
+		.then(data => convertData(data).reverse())
 	return promiseData;
 }
 export function _getTrade(){
-  const promiseTrade =   fetch("https://api.bitfinex.com/v2/trades/tETHBTC/hist")
+  const promiseTrade = fetch("https://api.bitfinex.com/v2/trades/tETHBTC/hist")
          .then(response =>response.json())
          return promiseTrade;
 }

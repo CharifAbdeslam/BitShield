@@ -22,7 +22,7 @@ body {
   background-color: rgba(81, 255, 79,0.01);
   }
   .trade-history{
-    height: 851px;
+    height: 835px;
     overflow-y: hidden;
     width: 100%;
     table > thead > tr > th{
@@ -37,6 +37,7 @@ body {
   }
   .tradinform_wrapper{
     border-right: solid 1px #4AC9C6;
+
   }
   .tradinform_wrapperS,.tradinform_wrapper{
     .divider{
@@ -44,6 +45,7 @@ body {
       margin: 0;
     }
     input{
+      font-size: 0.8rem;
       text-align: right;
       height: 22px;
 border: solid 1px #2daaa7;
@@ -134,7 +136,7 @@ border: 1px solid #4AC9C6;
     color: #E6E6E6!important;
   }
   .react-stockchart{
-    height:552px!important;
+    height:543px!important;
   }
   .react-stockcharts-tooltip {
      fill: #FFFFFF;
