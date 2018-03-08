@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
 import {Button, ButtonGroup,Row, Col} from 'reactstrap';
 import Chart from './Chart';
+import Loader from '../img/loader.svg';
 import {getData} from "../func";
 export default class CandleChart extends Component {
-  constructor(props) {
-    super(props);
-    this.State = {
-      mri: [1, 2, 3, 4]
-    }
-  }
   tickers() {
     getData().then(data => {
       this.setState({data})
@@ -23,8 +18,7 @@ export default class CandleChart extends Component {
   render() {
     if (this.state == null) {
       return <div className="mt-2 wrapper-section load text-center">
-        <span className="text-white"><i className="fas fa-spinner fa-pulse fa-5x"></i><br></br>
-        <span>Connecting</span></span>
+        <img src={Loader} alt="failed to load"/>
       </div>
     }
     return (<div>

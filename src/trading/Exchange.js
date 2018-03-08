@@ -205,7 +205,7 @@ componentDidMount() {
         <TraddingForm {...this.state} />
     </Col>
     <Col xs="2">
-      <Rightexchange />
+      <Rightexchange {...this.state} />
     </Col>
   </Row>
 </Container>
