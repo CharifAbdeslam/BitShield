@@ -22,7 +22,10 @@ export default class CandleChart extends Component {
   }
   render() {
     if (this.state == null) {
-      return <div>Loading...</div>
+      return <div className="mt-2 wrapper-section load text-center">
+        <span className="text-white"><i className="fas fa-spinner fa-pulse fa-5x"></i><br></br>
+        <span>Connecting</span></span>
+      </div>
     }
     return (<div>
       <div className="mt-2 wrapper-section">

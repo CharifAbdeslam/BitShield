@@ -79,6 +79,9 @@ constructor(props){
     this.setState({acFilter:this.refs.filt.value.toLowerCase()})
   }
   render(){
+    if(this.props === null){
+      return(<div>Loading .....</div>)
+    }
     return(
       <div>
         <div className="filter-container">

@@ -44,52 +44,67 @@ setPrice(tick,icon,symbol,price,vol,low,hight,change,changePre){
     changePre:changePre*100
   })
 }
+setCoin(id){
+  const {tickers} = this.state;
+  var tick = [tickers[id][1],tickers[id][8],tickers[id][10],tickers[id][9],tickers[id][5],tickers[id][6]];
+  return tick
+}
   setCurrent(e){
-      const {tickers} = this.state;
+      const tickETH = this.setCoin(0);
+      const tickBCH = this.setCoin(1);
+      const tickLTC = this.setCoin(2);
+      const tickXMR = this.setCoin(3);
+      const tickXRP = this.setCoin(4);
+      const tickETC = this.setCoin(5);
+      const tickZEC = this.setCoin(6);
+      const tickIOT = this.setCoin(7);
+      const tickDSH = this.setCoin(8);
+      const tickNEO = this.setCoin(9);
+      const tickGNT = this.setCoin(10);
+      const tickREP = this.setCoin(11);
+      const tickEOS = this.setCoin(12);
       switch (e.target.innerText) {
         case "ETH/BTC":
-        this.setPrice("ETH/BTC",
-                      "cc ETH",
-                      "ETH",
-                      tickers[0][1],
-                      tickers[0][8],
-                      tickers[0][10],
-                      tickers[0][9],
-                      tickers[0][5],
-                      tickers[0][6])
-          break;
-       case "BCH/BTC":
-       this.setPrice("BCH/BTC",
-                     "cc BTC",
-                     "BCH",
-                     tickers[1][1],
-                     tickers[1][8],
-                     tickers[1][10],
-                     tickers[1][9],
-                     tickers[1][5],
-                     tickers[1][6])
-         break;
-         case "LTC/BTC":
-         this.setPrice("LTC/BTC",
-                       "cc LTC",
-                       "LTC",
-                       tickers[2][1],
-                       tickers[2][8],
-                       tickers[2][10],
-                       tickers[2][9],
-                       tickers[2][5],
-                       tickers[2][6])
-           break;
-           default:
-           this.setPrice("ETH/BTC",
-                         "cc ETH",
-                         "ETH",
-                         tickers[0][1],
-                         tickers[0][8],
-                         tickers[0][10],
-                         tickers[0][9],
-                         tickers[0][5],
-                         tickers[0][6])
+        this.setPrice("ETH/BTC","cc ETH","ETH",...tickETH)
+        break;
+        case "BCH/BTC":
+        this.setPrice("BCH/BTC","cc BTC","BCH",...tickBCH)
+        break;
+        case "LTC/BTC":
+        this.setPrice("LTC/BTC","cc LTC","LTC",...tickLTC)
+        break;
+        case "XMR/BTC":
+        this.setPrice("XMR/BTC","cc XMR","XMR",...tickXMR)
+        break;
+        case "XRP/BTC":
+        this.setPrice("XRP/BTC","cc XRP","XRP",...tickXRP)
+        break;
+        case "ETC/BTC":
+        this.setPrice("ETC/BTC","cc ETC","ETC",...tickETC)
+        break;
+        case "ZEC/BTC":
+        this.setPrice("ZEC/BTC","cc ZEC","ZEC",...tickZEC)
+        break;
+        case "IOTA/BTC":
+        this.setPrice("IOTA/BTC","cc IOTA","IOTA",...tickIOT)
+        break;
+        case "DASH/BTC":
+        this.setPrice("DASH/BTC","cc DASH","DASH",...tickDSH)
+        break;
+        case "NEO/BTC":
+        this.setPrice("NEO/BTC","cc NEO","DASH",...tickNEO)
+        break;
+        case "GNT/BTC":
+        this.setPrice("GNT/BTC","cc GNT","GNT",...tickGNT)
+        break;
+        case "REP/BTC":
+        this.setPrice("REP/BTC","cc REP","REP",...tickREP)
+        break;
+        case "EOS/BTC":
+        this.setPrice("EOS/BTC","cc EOS","REP",...tickEOS)
+        break;
+        default:
+        this.setPrice("ETH/BTC","cc ETH","ETH",...tickETH)
       }
   }
   getPrice(){
@@ -135,6 +150,36 @@ componentDidMount() {
                 </DropdownItem>
                 <DropdownItem onClick={(e)=>this.setCurrent(e)}>
                 <span>ETH/BTC</span>
+                </DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
+                <span>XMR/BTC</span>
+                </DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
+                <span>XRP/BTC</span>
+                </DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
+                <span>ETC/BTC</span>
+                </DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
+                <span>ZEC/BTC</span>
+                </DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
+                <span>IOTA/BTC</span>
+                </DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
+                <span>DASH/BTC</span>
+                </DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
+                <span>NEO/BTC</span>
+                </DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
+                <span>GNT/BTC</span>
+                </DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
+                <span>REP/BTC</span>
+                </DropdownItem>
+                <DropdownItem onClick={(e)=>this.setCurrent(e)}>
+                <span>EOS/BTC</span>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

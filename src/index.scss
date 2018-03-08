@@ -10,6 +10,13 @@ $grayLighter:#ADB5BD;
 $green:#559B4F;
 $red:#FF6939;
 body {
+  .load{
+    height: 576px;
+    padding: 200px;
+  }
+  .market{
+    min-height: 500.5px;
+  }
   .track-vertical{
     background-color: green;
   }
@@ -32,7 +39,8 @@ body {
 
     td,th{
       border-top:0.5px solid  rgba(255,255,255,0.1);
-      font-size: 0.7rem;
+      font-size: 0.8rem;
+  font-weight: normal;
     }
   }
   .tradinform_wrapper{

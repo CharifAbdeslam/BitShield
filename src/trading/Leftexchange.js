@@ -48,7 +48,7 @@ export default class Leftexchange extends Component{
               <span className="text-secondary">HIGHT <span className="text-white">{hight.toFixed(6)}</span></span><br></br>
             </Col>
           </Row>
-          <Row className="header-left-control mt-2 ml-1 wrapper-section">
+          <Row className="header-left-control mt-2 ml-1 wrapper-section market">
             <Market {...this.props}/>
           </Row>
           <Row className="header-left-control mt-2 ml-1 wrapper-section">
