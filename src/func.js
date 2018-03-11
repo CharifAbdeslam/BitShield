@@ -22,6 +22,11 @@ function convertData(data) {
 	}
 	return output;
 }
+export function _getTicker(){
+  const promiseTicker = fetch("https://api.bitfinex.com/v2/ticker/tETHBTC")
+       .then(response => response.json())
+       return promiseTicker
+}
 export function getData() {
 	const promiseData = fetch("https://api.bitfinex.com/v2/candles/trade:5m:tETHBTC/hist")
 		.then(response => response.json())

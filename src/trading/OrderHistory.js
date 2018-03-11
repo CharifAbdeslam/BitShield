@@ -11,7 +11,6 @@ export default class OrderHistory extends Component{
  toggle() {
    this.setState({ collapse: !this.state.collapse });
  }
-
   render(){
     return(<div className="tr-form mt-2">
       <span className="text-secondary-white mt-2 ml-2" onClick={this.toggle}>

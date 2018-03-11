@@ -3,6 +3,7 @@ import {Row, Table} from 'reactstrap';
 import {_getTrade} from '../func';
 import {Scrollbars} from 'react-custom-scrollbars';
 import TraddingHistory from './TraddingHistory';
+import Loader from '../img/loader-sm.svg';
 export default class Rightexchange extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +15,12 @@ export default class Rightexchange extends Component {
     _getTrade().then(data => this.setState({trade:data}))
   }
   render() {
-  
+    let checkProps;
+    if(this.state.trade.length <= 0){
+      checkProps = (<div className="p-5 mt-5 text-center"> <img src={Loader} alt="loading...."/> </div>)
+    }else{
+      checkProps = (<TraddingHistory {...this.state}/>)
+    }
     return (<Row className="wrapper-section mt-2 mr-2">
       <div className="trade-history">
         <span className="text-secondary-white ml-2">Trade History</span>
@@ -33,7 +39,7 @@ export default class Rightexchange extends Component {
               opacity: '0.4',
               borderRadius: '5px'
             }}/>}>
-        <TraddingHistory {...this.state}/>
+        {checkProps}
         </Scrollbars>
       </div>
     </Row>)

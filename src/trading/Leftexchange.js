@@ -5,21 +5,12 @@ import PropTypes from "prop-types";
 import {Row,Col} from 'reactstrap';
 export default class Leftexchange extends Component{
   render(){
-    const {
-           tick,
-           symbol,
-           hight,
-           icon,
-           price,
-           vol,
-           change,
-           changePre,
-           low} = this.props;
-           if(this.props === null){
+    const {ticker} = this.props;
+           if(ticker.length <= 0){
              return(<div>LOADING</div>)
            }
-           var changePres = changePre.toFixed(2).toString();
-           var changes = change.toFixed(2).toString();
+           var changePres = (ticker[5]*100).toFixed(2).toString();
+           var changes = (ticker[4]*100).toFixed(2).toString();
            let color=null
            let caretdown=null
            if(changePres.indexOf("-") === 0){
@@ -33,23 +24,23 @@ export default class Leftexchange extends Component{
       <div>
           <Row className="header-left-control text-center mt-2 ml-1 wrapper-section">
             <Col xs="2">
-              <i className={icon + " crypto-size text-white"}></i>
+              <i className="cc ETH crypto-size text-white"></i>
             </Col>
             <Col xs="5">
-              <span className="text-white">{tick}</span><br></br>
-              <span className="text-secondary">VOL <span className="text-white">{vol.toFixed(2)}</span> {symbol}</span><br></br>
-              <span className="text-secondary">LOW <span className="text-white">{low.toFixed(6)}</span></span>
+              <span className="text-white">ETH/BTC</span><br></br>
+              <span className="text-secondary">VOL <span className="text-white">{ticker[7].toFixed(2)}</span> ETH</span><br></br>
+              <span className="text-secondary">LOW <span className="text-white">{ticker[9].toFixed(6)}</span></span>
             </Col>
             <Col xs="5">
-              <span className="text-white">{price.toFixed(7)}</span><br></br>
+              <span className="text-white">{ticker[0].toFixed(7)}</span><br></br>
               <span className={color}>{changes.replace("-","")}
                {caretdown ? '\u25BC' :  '\u25B2'}
               ({changePres.replace("-","")}%)</span><br></br>
-              <span className="text-secondary">HIGHT <span className="text-white">{hight.toFixed(6)}</span></span><br></br>
+              <span className="text-secondary">HIGHT <span className="text-white">{ticker[8].toFixed(6)}</span></span><br></br>
             </Col>
           </Row>
           <Row className="header-left-control mt-2 ml-1 wrapper-section market">
-            <Market {...this.props}/>
+            <Market/>
           </Row>
           <Row className="header-left-control mt-2 ml-1 wrapper-section">
           <OrderHistory/>
@@ -57,18 +48,4 @@ export default class Leftexchange extends Component{
         </div>
     )
   }
-}
-Leftexchange.propTypes={
-  tickers:PropTypes.array.isRequired
-}
-Leftexchange.defaultProps={
-  tick: "ETH/BTC",
-  icon: "cc ETH",
-  symbol:"ETH",
-  price:0,
-  vol:0,
-  change:0,
-  changePre:0,
-  low:0,
-  hight:0,
 }
