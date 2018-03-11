@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Row, Table} from 'reactstrap';
 import {_getTrade} from '../func';
-import {timeFormat} from "d3-time-format";
 import {Scrollbars} from 'react-custom-scrollbars';
+import TraddingHistory from './TraddingHistory';
 export default class Rightexchange extends Component {
   constructor(props) {
     super(props);
@@ -11,16 +11,10 @@ export default class Rightexchange extends Component {
     }
   }
   componentDidMount() {
-    _getTrade().then(data => this.setState({trade: data}))
+    _getTrade().then(data => this.setState({trade:data}))
   }
   render() {
-    const {trade} = this.state;
-    const time = timeFormat("%H:%M:%S");
-    var color,ico;
-    if (this.state === null) {
-      console.log("il est null maintenant")
-    return(<div className="text-white">Loading</div>)
-    }
+  
     return (<Row className="wrapper-section mt-2 mr-2">
       <div className="trade-history">
         <span className="text-secondary-white ml-2">Trade History</span>
@@ -39,24 +33,7 @@ export default class Rightexchange extends Component {
               opacity: '0.4',
               borderRadius: '5px'
             }}/>}>
-          <Table className="text-secondary text-white mb-0 text-center" size="sm" responsive="responsive">
-            <tbody className="text-center">
-              {trade.map(trade => {
-                if (trade[2] > 0) {
-                  color = "bgBuy";
-                  ico = "fas fa-arrow-circle-up";
-                } else {
-                  color = "bgSell";
-                  ico = "fas fa-arrow-circle-down";
-                }
-                return (<tr className={color} key={trade[0]}>
-                  <th>{time(trade[1])}</th>
-                  <td>{trade[2].toFixed(7).toString().replace("-", "")} <i className={ico}></i></td>
-                  <td>{trade[3].toFixed(7)}</td>
-                </tr>)
-              })}
-            </tbody>
-          </Table>
+        <TraddingHistory {...this.state}/>
         </Scrollbars>
       </div>
     </Row>)

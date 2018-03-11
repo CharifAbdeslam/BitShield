@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button, ButtonGroup,Row, Col} from 'reactstrap';
 import Chart from './Chart';
-import Loader from '../img/loader.svg';
+import Loader from '../img/loader-sm.svg';
 import {getData} from "../func";
 export default class CandleChart extends Component {
   tickers() {
