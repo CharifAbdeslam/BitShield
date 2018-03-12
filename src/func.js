@@ -1,11 +1,4 @@
-export function _chekNav(){
-  var nv = document.getElementById("nvL");
-  if(window.location.pathname === "/exchange"){
-    nv.style.display = "none";
-  }else{
-    nv.style.display = "block";
-  }
-}
+
 function convertData(data) {
 	var keys = ["date", "open", "close", "high", "low", "volume"],
 		i = 0,
@@ -22,19 +15,19 @@ function convertData(data) {
 	}
 	return output;
 }
-export function _getTicker(){
-  const promiseTicker = fetch("https://api.bitfinex.com/v2/ticker/tETHBTC")
+export function _getTicker(ticker){
+  const promiseTicker = fetch("https://api.bitfinex.com/v2/ticker/"+ticker)
        .then(response => response.json())
        return promiseTicker
 }
-export function getData() {
-	const promiseData = fetch("https://api.bitfinex.com/v2/candles/trade:5m:tETHBTC/hist")
+export function getData(ticker) {
+	const promiseData = fetch("https://api.bitfinex.com/v2/candles/trade:5m:"+ticker+"/hist")
 		.then(response => response.json())
 		.then(data => convertData(data).reverse())
 	return promiseData;
 }
-export function _getTrade(){
-  const promiseTrade = fetch("https://api.bitfinex.com/v2/trades/tETHBTC/hist")
+export function _getTrade(ticker){
+  const promiseTrade = fetch("https://api.bitfinex.com/v2/trades/"+ticker+"/hist")
          .then(response =>response.json())
          return promiseTrade;
 }

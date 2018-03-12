@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Collapse,Table} from 'reactstrap';
-import Loader from '../img/loader-sm.svg';
 export default class OrderHistory extends Component{
   constructor(props) {
    super(props);
@@ -28,8 +27,8 @@ export default class OrderHistory extends Component{
           </thead>
         </Table>
         <div className="text-center p-5 text-white">
-          <img src={Loader} alt="failed to load"/><br></br>
-          <span>Connecting</span>
+          <i className="fas fa-exclamation-triangle fa-3x"></i><br></br>
+          <span>This is a demo version, Please connect to start trading</span>
         </div>
         </Collapse>
     </div>)

@@ -5,7 +5,7 @@ import Loader from '../img/loader-sm.svg';
 import {getData} from "../func";
 export default class CandleChart extends Component {
   tickers() {
-    getData().then(data => {
+    getData(this.props.market).then(data => {
       this.setState({data})
     })
   }
@@ -21,7 +21,7 @@ export default class CandleChart extends Component {
         <img src={Loader} alt="failed to load"/>
       </div>
     }
-    return (<div>
+    return (
       <div className="mt-2 wrapper-section">
       <Row>
         <Col>
@@ -49,9 +49,9 @@ export default class CandleChart extends Component {
       </Col>
       </Row>
       <Chart {...this.state}/>
-    </div>
-
-
-</div>)
+    </div>)
   }
+}
+CandleChart.defaultProps={
+  market:"tETHBTC"
 }

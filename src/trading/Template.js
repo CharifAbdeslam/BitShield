@@ -5,7 +5,6 @@ import CandleChart from './CandleChart';
 import TraddingForm from "./TraddingForm";
 import {Container,Row,Col }from 'reactstrap';
 import {_getTicker} from "../func";
-
 export default class Template extends Component {
   constructor(props){
     super(props);
@@ -14,20 +13,20 @@ export default class Template extends Component {
     }
   }
   componentDidMount(){
-    _getTicker().then(data => this.setState({ticker:data}))
+    _getTicker(this.props.market).then(data => this.setState({ticker:data}))
   }
   render(){
     return(<Container fluid={true}>
       <Row>
         <Col xs="2">
-            <Leftexchange {...this.state}/>
+            <Leftexchange {...this.state} {...this.props}/>
         </Col>
         <Col xs="8">
-            <CandleChart/>
-            <TraddingForm price={this.state.ticker[0]}/>
+            <CandleChart {...this.props}/>
+            <TraddingForm price={this.state.ticker[0]} {...this.props}/>
         </Col>
         <Col xs="2">
-          <Rightexchange/>
+          <Rightexchange {...this.props}/>
         </Col>
       </Row>
     </Container>)

@@ -2,11 +2,8 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import {Button}  from 'reactstrap';
 import ExchangeAnimation from "./img/btc.png";
-import {_chekNav} from "./func.js";
+
 export default class Home extends Component{
-  componentDidMount(){
-  _chekNav();
-  }
   render(){
     return(
       <div>
