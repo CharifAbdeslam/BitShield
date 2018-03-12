@@ -9,12 +9,13 @@ export default class Template extends Component {
   constructor(props){
     super(props);
     this.state={
-      ticker:[]
+      ticker:[],
     }
   }
   componentDidMount(){
     _getTicker(this.props.market).then(data => this.setState({ticker:data}))
   }
+
   render(){
     return(<Container fluid={true}>
       <Row>
