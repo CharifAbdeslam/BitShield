@@ -5,7 +5,8 @@ import Loader from '../img/loader-sm.svg';
 import {getData} from "../func";
 export default class CandleChart extends Component {
   tickers() {
-    getData(this.props.market).then(data => {
+    const {market,time} = this.props;
+    getData(market,time).then(data => {
       this.setState({data})
     })
   }
@@ -40,7 +41,7 @@ export default class CandleChart extends Component {
       <Col>
         <ButtonGroup className="chart-setting" >
           <Button className="btn-secondary text-secondary-white ml-2">
-            <i className="fas fa-cogs"></i>
+            <i className="fas fa-chart-bar"></i>
           </Button>
           <Button className="btn-secondary text-secondary-white">
             <i className="fas fa-sync-alt"></i>
@@ -53,5 +54,6 @@ export default class CandleChart extends Component {
   }
 }
 CandleChart.defaultProps={
-  market:"tETHBTC"
+  market:"tETHBTC",
+  time:"5m"
 }

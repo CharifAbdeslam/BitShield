@@ -20,8 +20,8 @@ export function _getTicker(ticker){
        .then(response => response.json())
        return promiseTicker
 }
-export function getData(ticker) {
-	const promiseData = fetch("https://api.bitfinex.com/v2/candles/trade:5m:"+ticker+"/hist")
+export function getData(ticker,time) {
+	const promiseData = fetch("https://api.bitfinex.com/v2/candles/trade:"+time+":"+ticker+"/hist")
 		.then(response => response.json())
 		.then(data => convertData(data).reverse())
 	return promiseData;
