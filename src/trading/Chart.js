@@ -91,7 +91,6 @@ class CandleStickChartWithEquidistantChannel extends React.Component {
 			: {};
 		return (
 			<ChartCanvas
-
 				height={600}
 				width={width}
 				ratio={ratio}

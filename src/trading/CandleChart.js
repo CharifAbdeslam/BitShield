@@ -13,16 +13,15 @@ constructor(props){
     getData(market,time).then(data => this.setState({data}))
   }
   getTickersUpdated(time){
-    this.tickers(time)
     if(this.interval !=0){
       clearInterval(this.interval);
     }
+    this.tickers(time)
     let interHandler =  setInterval(()=>this.tickers(time),60000);
-    interHandler = this.interval;
-    console.log(interHandler)
+    this.interval = interHandler
+    console.log(this.interval)
   }
   componentDidMount() {
-    console.log(this.interval)
     this.tickers("1h")
   }
   render() {
