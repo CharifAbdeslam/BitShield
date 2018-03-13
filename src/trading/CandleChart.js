@@ -4,27 +4,26 @@ import Chart from './Chart';
 import Loader from '../img/loader-sm.svg';
 import {getData} from "../func";
 export default class CandleChart extends Component {
+constructor(props){
+  super(props);
+ this.interval = 0;
+}
   tickers(time) {
     const {market} = this.props;
     getData(market,time).then(data => this.setState({data}))
   }
   getTickersUpdated(time){
-    for(var i=0; i<100; i++){
-  clearInterval(i);
-  }
     this.tickers(time)
-    return setInterval(() => {
-        this.tickers(time)
-      },60000)
-  }
-  defaultLoad(time){
-    return setInterval(() => {
-        this.tickers(time)
-      },60000)
+    if(this.interval !=0){
+      clearInterval(this.interval);
+    }
+    let interHandler =  setInterval(()=>this.tickers(time),60000);
+    interHandler = this.interval;
+    console.log(interHandler)
   }
   componentDidMount() {
-    this.tickers("5m")
-    this.defaultLoad("5m");
+    console.log(this.interval)
+    this.tickers("1h")
   }
   render() {
     if (this.state == null) {
@@ -59,7 +58,7 @@ export default class CandleChart extends Component {
         </ButtonGroup>
       </Col>
       </Row>
-      <Chart {...this.state}/>
+      <Chart data = {this.state.data}/>
     </div>)
   }
 }

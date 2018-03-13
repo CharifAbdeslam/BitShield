@@ -23,7 +23,7 @@ export default class Template extends Component {
             <Leftexchange {...this.state} {...this.props}/>
         </Col>
         <Col xs="8">
-            <CandleChart {...this.props}/>
+            <CandleChart {...this.props} {...this.state}/>
             <TraddingForm price={this.state.ticker[0]} {...this.props}/>
         </Col>
         <Col xs="2">
