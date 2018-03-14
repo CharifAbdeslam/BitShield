@@ -12,11 +12,12 @@ export default class Rightexchange extends Component {
     }
   }
   getTrade(){
-    _getTrade(this.props.market).then(data => this.setState({trade:data}))
+    const {market} = this.props;
+    _getTrade(market).then(data => this.setState({trade:data}))
   }
   componentDidMount() {
     this.getTrade()
-    setInterval(()=>this.getTrade(),40000)
+   setInterval(()=>this.getTrade(),40000)
   }
   render() {
     let checkProps;

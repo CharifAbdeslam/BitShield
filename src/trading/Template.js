@@ -10,10 +10,19 @@ export default class Template extends Component {
     super(props);
     this.state={
       ticker:[],
+      intervalClear:0
     }
   }
+  getTicker(){
+    const {market} = this.props
+    _getTicker(market).then(data => this.setState({ticker:data}));
+  }
+  livePrice(){
+    this.getTicker();
+    setInterval(()=>this.getTicker(),60000);
+  }
   componentDidMount(){
-    _getTicker(this.props.market).then(data => this.setState({ticker:data}))
+    this.livePrice();
   }
 
   render(){
